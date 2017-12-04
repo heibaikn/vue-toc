@@ -22,7 +22,12 @@ export default new Router({
     },
     Auth,
     {
-      path: '/user/:id', component: User,
+      path: '/user', 
+      component: User,
+    },
+    {
+      path: '/user/:id', 
+      component: User,
       children: [
         // UserHome will be rendered inside User's <router-view>
         // when /user/:id is matched

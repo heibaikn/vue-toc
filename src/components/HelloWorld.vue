@@ -5,7 +5,6 @@
 </template>
 
 <script>
-console.log(3);
 export default {
   name: "HelloWorld",
   data() {
@@ -21,7 +20,5 @@ export default {
 h1,h2 
   font-weight: normal
   background: #f00
-
-
 
 </style>
