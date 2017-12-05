@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 
 import Auth from '@/views/Auth/router';
 import User from '@/views/User/router';
+import Task from '@/views/User/router';
 
 
 
@@ -13,12 +13,13 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '*',
+      name: 'default',
+      component: () => import('@/views/Task/task'),
     },
+    ...Task,
     ...Auth,
     ...User,
-   
+
   ]
 })

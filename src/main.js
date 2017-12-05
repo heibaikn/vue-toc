@@ -5,7 +5,9 @@ import store from './store';
 import router from './router'
 
 // require('./api')
+import './utils'
 import './api'
+import './components'
 
 Vue.config.productionTip = false
 import App from './App'
