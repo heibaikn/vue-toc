@@ -1,24 +1,26 @@
 import jss from 'jss'
 import preset from 'jss-preset-default'
 
+import _ZH from './zh';
+import _EN from './en';
+
 jss.setup(preset())
 
-// Create your style.
-const style = {
-    myButton: {
-        color: 'green'
-    }
-}
-
 // Compile styles, apply plugins.
-const sheet = jss.createStyleSheet(style)
+// const sheet = jss.createStyleSheet(_ZH)
 
 // If you want to render on the client, insert it into DOM.
-sheet.attach()
+// sheet.attach()
 
 // If you want to render server-side, get the css text.
-sheet.toString()
+// sheet.toString()
 
-console.log(sheet);
+// console.log(sheet);
 
-export default {}
+export default language => {
+    if (language === 'zh') {
+        return jss.createStyleSheet(_ZH).attach().classes
+    }else{
+        return jss.createStyleSheet(_EN).attach().classes
+    }
+}

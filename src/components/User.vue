@@ -5,11 +5,9 @@
 </template>
 
 <script>
-console.log(4);
 export default {
   name:'User',
   mounted(){
-      console.log(12);
   }
 }
 </script>

@@ -6,9 +6,6 @@ import router from './router'
 
 // require('./api')
 import './api'
-import sheet from './assets/style';
-
-console.log(sheet);
 
 Vue.config.productionTip = false
 import App from './App'
