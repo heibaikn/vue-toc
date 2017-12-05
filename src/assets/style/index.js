@@ -17,10 +17,13 @@ jss.setup(preset())
 
 // console.log(sheet);
 
+const zhStyle = jss.createStyleSheet(_ZH).attach().classes
+const enStyle = jss.createStyleSheet(_EN).attach().classes
+
 export default language => {
     if (language === 'zh') {
-        return jss.createStyleSheet(_ZH).attach().classes
+        return zhStyle
     }else{
-        return jss.createStyleSheet(_EN).attach().classes
+        return enStyle
     }
 }
