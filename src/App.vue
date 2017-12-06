@@ -1,15 +1,14 @@
 <template lang="pug">
   <div id="app" >
-    app-header
+    app-header.header
     .main
-      app-slider
+      app-slider.slider
       <router-view class="view"/>
   </div>
 </template>
 
 <script>
 import createStyle from './assets/style';
-console.log(createStyle('zh'));
 export default {
   name: 'app',
   data() {
@@ -26,11 +25,30 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./assets/reset.css";
+
 #app {
-}
-.main {
   display: flex;
-  
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 2px;
+  .header{
+    height: 50px;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+
+    // min-width: 1300px;
+    // min-height: 900px;
+    .slider{
+       width: 150px;
+    }
+    .view{
+       flex: 1;
+    }
+
+  }
 }
 </style>

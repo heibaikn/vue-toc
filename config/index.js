@@ -10,7 +10,17 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // 网络请求代理 规则
+    proxyTable: {
+      '/api/rendering/user': {
+        // target: 'http://172.16.4.35:8389',
+        // target: 'http://172.16.4.6:8389',
+        // target: 'http://task.renderbus.com',
+        target: 'http://10.60.96.142:8389',
+        // target: 'http://172.16.4.36:8389',
+        changeOrigin: true,
+      },
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

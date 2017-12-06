@@ -6,8 +6,11 @@ import router from './router'
 
 // require('./api')
 import './utils'
+import './mixin'
 import './api'
 import './components'
+import './filter'
+import './directives'
 
 Vue.config.productionTip = false
 import App from './App'

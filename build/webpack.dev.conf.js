@@ -50,7 +50,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }),
   ]
 })
-
+Object.keys(config.dev.proxyTable).forEach(k=>{
+  console.log(k,'->',config.dev.proxyTable[k].target);
+})
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
   portfinder.getPort((err, port) => {
@@ -71,7 +73,6 @@ module.exports = new Promise((resolve, reject) => {
         ? utils.createNotifierCallback()
         : undefined
       }))
-
       resolve(devWebpackConfig)
     }
   })

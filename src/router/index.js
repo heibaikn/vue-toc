@@ -3,8 +3,7 @@ import Router from 'vue-router'
 
 import Auth from '@/views/Auth/router';
 import User from '@/views/User/router';
-import Task from '@/views/User/router';
-
+import Task from '@/views/Task/router';
 
 
 Vue.use(Router)
