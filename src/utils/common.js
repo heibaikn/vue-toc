@@ -9,5 +9,13 @@ export default {
                 Vue.use(p);
             });
         }
+        Vue.queueEvent = (...plugins) => {
+            let arr = [];
+            
+            return (func, request) => {
+                arr.push(func)
+                console.log(arr);
+            }
+        }
     }
 }

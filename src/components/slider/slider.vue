@@ -41,6 +41,22 @@ export default {
                         to: '/user',
                     },
                 ]
+            }, {
+                title: '测试代码',
+                list: [
+                    {
+                        name: 'provide ',
+                        to: '/provide ',
+                    },
+                    {
+                        name: 'routerhook ',
+                        to: '/routerhook ',
+                    },
+                    {
+                        name: 'queueevent',
+                        to: '/queueevent',
+                    },
+                ]
             }]
         }
     }

@@ -6,9 +6,5 @@ export default [
     name: 'login',
     component: Auth
   },
-  {
-    path: '/testdoubleclick',
-    name: 'testdoubleclick',
-    component:() => import('@/views/Auth/testDoubleClick')
-  },
+
 ]
