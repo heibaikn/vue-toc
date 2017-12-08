@@ -30,7 +30,6 @@ axios
     .interceptors
     .request
     .use(config => {
-        console.log(config.data);
         Object.assign(config.headers, { 'Content-Type': 'application/json' }, CONST_HEADER());
         return config
     });

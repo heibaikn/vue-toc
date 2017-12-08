@@ -11,30 +11,33 @@
 
 </template>
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 export default {
-    name: "",
-    data() {
-        return {
-            verify:"",
-            size:1024*1024,
-            userName: '',
-            password: '',
-            rememberPassword: false,
-        }
-    },
-    methods: {
-        ...mapActions('Test', ['queue']),
-        login() {
-            // console.log();
-            this.queue({
-                userName: 'xiexianguo',
-                password: '12345678',
-                rememberPassword: false,
-            })
-            // console.log('login');
-        }
+  name: "",
+  data() {
+    return {
+      verify: "",
+      size: 1024 * 1024,
+      userName: "",
+      password: "",
+      rememberPassword: false
+    };
+  },
+  methods: {
+    ...mapActions("Test", ["queue"]),
+    async login() {
+      // console.log();
+      for (var i=0;i<5;i++) {
+        let ret = await this.queue({
+          userName: "xiexianguo",
+          password: "12345678",
+          rememberPassword: false,
+        });
+        console.log(ret);
+      }
+      // console.log('login');
     }
+  }
 };
 </script>
 <style lang="scss">

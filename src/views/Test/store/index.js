@@ -6,7 +6,7 @@ import {
 } from './mutation';
 import { authApi } from '@/api';
 // console.log(authApi);
-let queue = Vue.queueEvent()
+let queueEvent = Vue.queueEvent()
 
 export default {
     namespaced: true,
@@ -27,7 +27,7 @@ export default {
         },
         async queue({ state, commit, }, request) {
 
-            queue(authApi.login, request)
+           return await queueEvent(authApi.login, request)
         }
     }
 }

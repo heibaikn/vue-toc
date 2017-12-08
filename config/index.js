@@ -6,7 +6,6 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -15,8 +14,8 @@ module.exports = {
       '/api/rendering/user': {
         // target: 'http://172.16.4.35:8389',
         // target: 'http://172.16.4.6:8389',
-        // target: 'http://task.renderbus.com',
-        target: 'http://10.60.96.142:8389',
+        target: 'http://task.renderbus.com',
+        // target: 'http://10.60.96.142:8389',
         // target: 'http://172.16.4.36:8389',
         changeOrigin: true,
       },
