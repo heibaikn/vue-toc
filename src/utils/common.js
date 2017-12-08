@@ -10,44 +10,26 @@ export default {
             });
         }
         Vue.queueEvent = () => {
-            let arr = [],res=[];
-            let status ='';
-            let i=0
-            let loop = function(request){
-                // console.log(i++);
-                if(status==='pending'&&arr.length)return
-                return new Promise((resolve,reject)=>{
-                    // console.log(arr[0](request));
-                    status="pending";
-                    console.log('go');
-                    arr[0].func(request).then(v=>{
-                        resolve(v)
-                    })
-                }).then(function(ret){
-                    arr.shift()
-                    res.push(ret)
-                    status ='';
-                    // console.log(ret);
-                    if(arr.length===0){
-                        console.log(res);
-                        return 
-                    }
-                    loop(arr[0].request)
-                })
+            let event = [], resolveArr = []
+            let status = '', i = 0;
+            let loop = async () => {
+                if (status === 'pending') return
+                status = 'pending';
+                for (let n = 0; n < event.length; n++) {
+                    resolveArr[n](await event[n].func(event[n].request))
+                }
+                status = ""
+                i = 0;
+                // console.log(event.length);
+                event.splice(0, event.length)
+
             }
             return (func, request) => {
-                
-                arr.push({func, request})
-                loop(request)
-                return new Promise((resolve,reject)=>{
-                    let n=i++
-                    let interval=setInterval(()=>{
-                        console.log(res)
-                        if(res[n]){
-                            resolve(res[n])
-                            clearInterval(interval)
-                        }
-                    },100)
+                event.push({ func, request })
+                loop()
+                return new Promise((resolve, reject) => {
+                    let n = i++
+                    resolveArr[n] = resolve
                 })
             }
         }

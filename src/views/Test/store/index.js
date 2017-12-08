@@ -27,7 +27,8 @@ export default {
         },
         async queue({ state, commit, }, request) {
 
-           return await queueEvent(authApi.login, request)
+           return await queueEvent(authApi.queryUser, request)
+        //    return await authApi.queryUser(request)
         }
     }
 }

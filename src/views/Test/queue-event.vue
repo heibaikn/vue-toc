@@ -25,15 +25,17 @@ export default {
   },
   methods: {
     ...mapActions("Test", ["queue"]),
-    async login() {
+     login() {
       // console.log();
       for (var i=0;i<5;i++) {
-        let ret = await this.queue({
+        let ret =  this.queue({
           userName: "xiexianguo",
           password: "12345678",
           rememberPassword: false,
-        });
-        console.log(ret);
+        }).then(v=>{
+          console.log(v);
+        })
+        // console.log(ret);
       }
       // console.log('login');
     }
