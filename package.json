@@ -1,5 +1,5 @@
 {
-  "name": "d",
+  "name": "renderbus",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "kn <heibaikn@gmail.com>",
@@ -11,7 +11,8 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "kn": "webpack-dev-server --host 127.0.0.1 --public 127.0.0.1:8082 --watch-poll"
   },
   "dependencies": {
     "axios": "^0.17.1",

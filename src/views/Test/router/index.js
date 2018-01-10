@@ -19,4 +19,9 @@ export default [
         name: 'queueevent',
         component: () => import('../queue-event')
     },
+    {
+        path: '/computed',
+        name: 'computed',
+        component: () => import('../computed')
+    },
 ]

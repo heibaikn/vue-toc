@@ -1,5 +1,7 @@
 <template lang="pug">
 .login 
+    div 
+      <img :src='img'>
     div 用户名account:
         input(type="text" placeholder="请输入用户名" v-model="userName") 
         span {{this.userName}}
@@ -16,12 +18,16 @@ export default {
   name: "",
   data() {
     return {
+      img:'../../assets/logo.png',
       verify: "",
       size: 1024 * 1024,
       userName: "",
       password: "",
       rememberPassword: false
     };
+  },
+  computed:{
+    // img:
   },
   methods: {
     ...mapActions("Test", ["queue"]),

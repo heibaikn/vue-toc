@@ -37,7 +37,7 @@ export default {
                 title: '用户管理',
                 list: [
                     {
-                        name: '用户列表',
+                        name: '子路由',
                         to: '/user',
                     },
                 ]
@@ -56,6 +56,11 @@ export default {
                         name: 'queueevent',
                         to: '/queueevent',
                     },
+                ]
+            },{
+                title: '依赖dependencies',
+                list: [
+    
                 ]
             }]
         }
