@@ -8,21 +8,22 @@
 </template>
 
 <script>
-import createStyle from './assets/style';
+import createStyle from "./assets/style";
 export default {
-  name: 'app',
+  name: "app",
   data() {
     return {
-      selected: 'zh',
-      classes: createStyle('zh')
-    }
+      selected: "zh",
+      classes: createStyle("zh")
+    };
   },
   methods: {
     change() {
-      this.classes = createStyle(this.selected)
+      var a;
+      this.classes = createStyle(this.selected);
     }
-  },
-}
+  }
+};
 </script>
 
 <style lang="scss">
@@ -33,7 +34,7 @@ export default {
   flex-direction: column;
   height: 100vh;
   padding: 0 2px;
-  .header{
+  .header {
     height: 50px;
   }
   .main {
@@ -42,13 +43,12 @@ export default {
 
     // min-width: 1300px;
     // min-height: 900px;
-    .slider{
-       width: 150px;
+    .slider {
+      width: 150px;
     }
-    .view{
-       flex: 1;
+    .view {
+      flex: 1;
     }
-
   }
 }
 </style>
